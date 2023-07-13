@@ -129,6 +129,7 @@ class LoadingButton @JvmOverloads constructor(
     }
 
     private fun stopLoadingAnim() {
+        progress = 0f
         valueAnimator.cancel()
     }
 }

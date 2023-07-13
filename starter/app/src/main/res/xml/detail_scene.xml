@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- A transition describes an animation via start and end state -->
     <Transition
-        app:constraintSetStart="@+id/start"
+        app:autoTransition="animateToEnd"
         app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start"
         app:duration="2000">
         <KeyFrameSet>
 
             <KeyAttribute
                 app:framePosition="50"
-                app:motionTarget="@id/buttonOK"
-                />
+                app:motionTarget="@id/buttonOK" />
             <KeyAttribute
                 app:framePosition="100"
-                app:motionTarget="@id/buttonOK"
-                />
+                app:motionTarget="@id/buttonOK" />
         </KeyFrameSet>
-        <OnClick />
     </Transition>
 
     <!-- Constraints to apply at the start of the animation -->
@@ -26,9 +24,19 @@
             android:id="@id/buttonOK"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="200dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/textFileName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/labelFileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            app:layout_constraintTop_toTopOf="@id/labelFileName"
+            android:rotation="-360" />
     </ConstraintSet>
 
     <!-- Constraints to apply at the end of the animation -->
@@ -37,9 +45,17 @@
             android:id="@id/buttonOK"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/textFileName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/labelFileName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16dp"
+            app:layout_constraintTop_toTopOf="@id/labelFileName"
+            android:rotation="360" />
     </ConstraintSet>
 </MotionScene>
